@@ -9,5 +9,4 @@ public class MamulServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(MamulServerApplication.class, args);
     }
-
 }
