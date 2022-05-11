@@ -26,13 +26,13 @@ public class NoticeController {
     public String getFormattedNotice(@RequestBody NoticeDto.Request request) {
         log.info(request.toString());
 
-        // 1. DTO 를 Entity 로 변환
-        Notice notice = request.toEntity();
-        log.info(notice.toString());
-
-        // 2. Entity 를 DB에 저장
-        Notice saved = noticeRepository.save(notice);
-        log.info(saved.toString());
+//        // 1. DTO 를 Entity 로 변환
+//        Notice notice = request.toEntity();
+//        log.info(notice.toString());
+//
+//        // 2. Entity 를 DB에 저장
+//        Notice saved = noticeRepository.save(notice);
+//        log.info(saved.toString());
 
         return noticeService.getFormattedNotice(request);
     }

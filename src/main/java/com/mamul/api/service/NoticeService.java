@@ -1,5 +1,6 @@
 package com.mamul.api.service;
 
+import com.mamul.api.model.Notice;
 import com.mamul.api.model.NoticeDto;
 import com.mamul.api.repository.NoticeRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,12 @@ public class NoticeService {
             "\n문의 사항 있으시면 언제든 당근챗 주세요!\uD83D\uDE00";
 
     public String getFormattedNotice(NoticeDto.Request request) {
+        // DTO -> Entity
+        Notice notice = request.toEntity();
+
+        // Entity -> DB 저장
+        Notice saved = noticeRepository.save(notice);
+
         String isUsed = "중고 상품";
         if(!request.isUsed())    isUsed = "새상품";
 
